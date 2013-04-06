@@ -1,0 +1,7 @@
+name:  audio3
+description:  A collaborative music editor
+
+dependencies:
+  browser: any
+  js: { hosted: js }
+  web_ui: any

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>cell</title>
+  </head>
+ 
+  <body>
+    <element extends="div" name="x-cell" constructor="CellComponent">
+      <template>
+        <div class="{{tick.uiState}} {{tick.isPlaying ? (tick.uiState == 'EMPTY' ? 'emptyPlaying' : 'playing') : ''}}" on-click="cellClicked($event)">&nbsp;</div>
+      </template>
+      <script type="application/dart" src="cell.dart"></script>
+    </element>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="components" href="track.html">
+  </head>
+  <body>   
+    <element extends="div" name="x-shell" constructor="Shell">
+      <template>
+        <h1>Audio<sup>3</sup></h1>
+        <button on-click='start_player($event)'>Play</button>
+        <button on-click='stop_player($event)'>Stop</button>
+        <span>{{bpm}}</span>
+        <button on-click='incbpm($event)'>+</button>
+        <button on-click='decbpm($event)'>-</button>
+        
+        <template iterate="track in controller.tracks">
+          <x-track track="{{track}}"></x-track>
+        </template>
+      </template>
+      <script type="application/dart" src="shell.dart"></script>
+    </element>
+  </body>
+</html>

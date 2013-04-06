@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Audio3</title>
+    <link rel="components" href="shell.html">
+  <style>
+    .headerCell {
+      font-size: small;
+      width: 100px;
+      border-right: 2px solid #EEE;
+    }
+    .noteRow {
+      height: 20px;
+      border-bottom: 1px dashed #EEE;
+    }
+    .noteCell {
+      width: 30px;
+      border-right: 1px dashed #EEE;
+    }
+    .noteCell div {
+    }
+    td {
+      padding: 0;
+    }
+
+  .CONTINUES {
+    background-color: #33CC33;
+  }
+  
+  .STARTS {
+    background-color: #33CC33;
+    margin: 1px 0px 1px 2px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .STARTS_ENDS {
+    background-color: #33CC33;
+    margin: 1px 2px 1px 2px;
+    border-radius: 5px;
+  }
+  .ENDS {
+    background-color: #33CC33;
+    margin: 1px 2px 1px 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  },
+  .EMPTY {
+    background-color: #000;
+    margin: 0px;
+  }
+  .playing {
+    background-color: #C2F0C2;
+  }
+  .emptyPlaying {
+    background-color: #333;
+  }
+  </style>
+  </head>
+  <body style="margin: 0; padding: 15px; background-color: #000; color: #EEE">   
+    <template if="shellController != null">
+    <x-shell id="shell" controller="{{shellController}}"></x-shell>
+    </template>
+    <template if="shellController == null">
+      Loading...
+      
+    </template>
+    <button id="authorizeButton" disabled>You must authorize</button>
+    
+    <!-- all of these are needed by model2.dart -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+    <script src="model2.js"></script>
+    <script type="text/javascript" src="realtime-client-utils.js"></script>  
+    
+    <script type="application/dart" src="home.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

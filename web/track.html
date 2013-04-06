@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="components" href="cell.html">
+  </head>
+ 
+  <body>
+    <element extends="div" name="x-track" constructor="TrackComponent">
+      <template>
+        <h2>{{track.instrument}}</h2>
+        <table style="border-collapse: collapse; border-top: 1px dashed #EEE">
+          <tbody template iterate="note in track.notes">
+              <tr class="noteRow" template iterate="cell in note.cells">
+                <td class="{{cell.cssClass}}">
+                  <template if="cell is HeaderCell">
+                    {{note.name}}
+                  </template>
+                  <template if="cell is Tick">
+                    <x-cell track="{{track}}" tick="{{cell}}"></x-cell>
+                  </template>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </template>
+      <script type="application/dart" src="track.dart"></script>
+    </element>
+  </body>
+</html>

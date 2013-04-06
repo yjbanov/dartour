@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>debug</title>
+    
+    <!-- all of these are needed by model2.dart -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+    <script src="model2.js"></script>
+    <script type="text/javascript" src="realtime-client-utils.js"></script>
+
+  </head>
+ 
+  <body>
+    <button id="authorizeButton" disabled>You must authorize</button>
+    
+    <div>
+    Track: <input type="text" id="track"><br>
+    Tick: <input type="text" id="tick"><br>
+    Pitch: <input type="text" id="pitch"><br>
+    Value: <input type="text" id="value"><br>
+    <input type="submit" id="submit" disabled><br>
+    </div>
+    
+    
+    <p id="text"></p>
+    <script type="application/dart" src="debug.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
